@@ -40,7 +40,7 @@ public class CalculatorController {
 	 * 
 	 * @return a json list of all the calculations
 	 */
-	@GetMapping("/deduction/old")
+	@GetMapping("/deduction/old-age")
 	public ResponseEntity<List<CalculationVO>> getProducts() {
 		LOG.info("Getting all the calculations");
 		List<CalculationVO> products = calculatorManager.getCalculations();

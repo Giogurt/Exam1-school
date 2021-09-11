@@ -84,10 +84,10 @@ public class CalculatorManager {
 		double sbc = 0;
 		UMA uma = chambasoftService.getUMA(year);
 		LOG.debug("Retrieving the uma info from service {}", uma);
-		if (optionalTerDate.isEmpty()) {
-			terDate = String.valueOf(year) + "-" + month + "-" + "30";
-		} else {
+		if (optionalTerDate.isPresent()) {
 			terDate = optionalTerDate.get();
+		} else {
+			terDate = String.valueOf(year) + "-" + month + "-" + "30";
 		}
 		try {
 			workedDays = calculateDaysWorked(terDate, incDate, TimeUnit.DAYS, year, month);
